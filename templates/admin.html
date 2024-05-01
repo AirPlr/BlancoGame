@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+        <title>Admin Blanco</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+            }
+
+            h1 {
+                color: #333;
+            }
+
+            form {
+                margin-bottom: 20px;
+            }
+
+            label {
+                font-weight: bold;
+            }
+
+            input[type="text"] {
+                padding: 5px;
+                width: 200px;
+            }
+
+            input[type="submit"] {
+                padding: 10px 20px;
+                background-color: #333;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+            }
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            li {
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+</head>
+<body>
+    <h1>Pagina Admin</h1>
+    <form method="POST" action="/start">
+        <label for="word">Scegli la parola:</label><br>
+        <input type="text" id="word" name="word"><br>
+        <input type="submit" value="Inizia la partita">
+    </form>
+    <ul>
+    {% for player in players.values() %}
+        <li>{{ player.name }}: {{ player.word }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
